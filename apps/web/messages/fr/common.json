@@ -1,0 +1,21 @@
+{
+  "close": "Fermer",
+  "book": "Réserver",
+  "retry": "Réessayer",
+  "share": "Partager",
+  "loading": "Chargement…",
+  "errors": {
+    "generic": "Quelque chose n’a pas marché. Réessaie dans un instant.",
+    "network": "Pas de connexion. Vérifie ton réseau et réessaie.",
+    "required": "Ce champ est obligatoire."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "body": "Cette page n’existe pas ou plus. Vérifie le lien qu’on t’a envoyé."
+  },
+  "crash": {
+    "title": "Quelque chose n’a pas marché",
+    "body": "La page n’a pas pu s’afficher. Réessaie, ou reviens à l’accueil.",
+    "home": "Retour à l’accueil"
+  }
+}

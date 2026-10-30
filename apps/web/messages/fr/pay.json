@@ -1,0 +1,79 @@
+{
+  "metaTitle": "Acompte · {pro}",
+  "secure": "Paiement sécurisé",
+  "title": {
+    "held": "Réglez votre acompte",
+    "confirmed": "C'est réservé",
+    "expired": "Ce créneau n'est plus réservé",
+    "cancelled": "Réservation annulée"
+  },
+  "lead": {
+    "held": "Votre créneau avec {pro} est gardé pendant le paiement. Le reste se règle au salon.",
+    "confirmed": "{pro} vous attend. Votre confirmation est aussi dans le chat.",
+    "expired": "Le délai de réservation a expiré avant le paiement. Rien n'a été débité.",
+    "cancelled": "Cette réservation a été annulée.",
+    "refunded": "Cette réservation a été annulée. Un éventuel remboursement revient sur le compte PayPal utilisé.",
+    "slotLost": "Ce créneau a été pris juste avant la validation de votre paiement. Vous avez été intégralement remboursé."
+  },
+  "hold": {
+    "left": "Créneau gardé encore <b>{time}</b>"
+  },
+  "status": {
+    "held": "Gardé",
+    "confirmed": "Confirmé",
+    "expired": "Expiré",
+    "cancelled": "Annulé"
+  },
+  "ticket": {
+    "range": "{from} à {to}",
+    "with": "avec {staff}",
+    "price": "Prix de la prestation",
+    "deposit": "Acompte",
+    "fee": "Frais de réservation",
+    "toPay": "À payer maintenant",
+    "paid": "Payé avec PayPal",
+    "balance": "Reste à régler au salon",
+    "ref": "Référence de réservation",
+    "total": "Acompte et frais"
+  },
+  "payment": {
+    "title": "Paiement",
+    "loading": "Chargement de PayPal…",
+    "capturing": "Confirmation de votre paiement…",
+    "pending": "PayPal traite encore votre paiement. Cette page se met à jour toute seule.",
+    "cancelled": "Paiement annulé. Votre créneau est toujours gardé : vous pouvez réessayer.",
+    "declined": "PayPal a refusé ce paiement. Veuillez réessayer avec un autre moyen de paiement.",
+    "error": "Un problème est survenu avec PayPal. Veuillez réessayer.",
+    "sdkError": "Les boutons PayPal n'ont pas pu se charger. Utilisez le lien ci-dessous.",
+    "prepareError": "Nous n'avons pas pu préparer votre paiement.",
+    "retry": "Réessayer",
+    "secure": "Vous payez dans la fenêtre sécurisée de PayPal.",
+    "fallback": "Payer sur PayPal.com",
+    "simulator": "Payer (simulateur sandbox)",
+    "simulatorNote": "Mode test : aucun argent réel n'est débité."
+  },
+  "details": {
+    "title": "Vos coordonnées",
+    "firstName": "Prénom",
+    "firstNameError": "Indiquez votre prénom.",
+    "phone": "Mobile (facultatif)",
+    "phoneHint": "Pour que {pro} puisse vous joindre au sujet de votre rendez-vous.",
+    "phoneError": "Ce numéro ne semble pas correct. Par exemple : {example}",
+    "phoneErrorPlain": "Ce numéro ne semble pas correct.",
+    "needed": "Indiquez votre prénom pour payer."
+  },
+  "confirmed": {
+    "paidTitle": "Acompte réglé",
+    "paidNote": "{amount} payés avec PayPal."
+  },
+  "actions": {
+    "newSlot": "Demander un autre créneau",
+    "backToChat": "Revenir au chat"
+  },
+  "policy": "Acompte et annulation",
+  "error": {
+    "title": "Cette page n'a pas pu se charger",
+    "body": "Veuillez réessayer dans un instant.",
+    "retry": "Réessayer"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "close": "Cerrar",
+  "book": "Reservar",
+  "retry": "Reintentar",
+  "share": "Compartir",
+  "loading": "Cargando…",
+  "errors": {
+    "generic": "Algo ha fallado. Vuelve a intentarlo en un momento.",
+    "network": "Sin conexión. Revisa tu red y vuelve a intentarlo.",
+    "required": "Este campo es obligatorio."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "body": "Esta página no existe o ya no está disponible. Revisa el enlace que te enviaron."
+  },
+  "crash": {
+    "title": "Algo ha fallado",
+    "body": "No se ha podido mostrar la página. Vuelve a intentarlo o vuelve al inicio.",
+    "home": "Volver al inicio"
+  }
+}

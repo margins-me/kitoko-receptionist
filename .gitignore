@@ -1,0 +1,27 @@
+node_modules
+.turbo
+.next*
+coverage
+*.tsbuildinfo
+.DS_Store
+.env
+.env.*
+!.env.example
+supabase/.temp
+supabase/.branches
+.open-next
+.wrangler
+.dev.vars*
+.vercel
+.fallow/
+
+# Pro import files (real pros' data) stay machine-local
+.demo-data/
+
+# Never in the public repo
+outreach/
+.claude/
+.zcode/
+
+# Apple product bezels (licence forbids redistribution)
+.design/

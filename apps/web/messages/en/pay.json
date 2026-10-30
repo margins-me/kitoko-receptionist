@@ -1,0 +1,79 @@
+{
+  "metaTitle": "Deposit · {pro}",
+  "secure": "Secure payment",
+  "title": {
+    "held": "Pay your deposit",
+    "confirmed": "You're booked",
+    "expired": "This slot is no longer held",
+    "cancelled": "Booking cancelled"
+  },
+  "lead": {
+    "held": "Your slot with {pro} is held while you pay. The rest is paid at the salon.",
+    "confirmed": "{pro} is expecting you. Your confirmation is also in the chat.",
+    "expired": "The hold ran out before payment. Nothing was charged.",
+    "cancelled": "This booking was cancelled.",
+    "refunded": "This booking was cancelled. Any refund goes back to the PayPal account you paid with.",
+    "slotLost": "Someone took this slot just before your payment went through. Your payment was refunded in full."
+  },
+  "hold": {
+    "left": "Slot held for <b>{time}</b>"
+  },
+  "status": {
+    "held": "Held",
+    "confirmed": "Confirmed",
+    "expired": "Expired",
+    "cancelled": "Cancelled"
+  },
+  "ticket": {
+    "range": "{from} to {to}",
+    "with": "with {staff}",
+    "price": "Service price",
+    "deposit": "Deposit",
+    "fee": "Booking fee",
+    "toPay": "To pay now",
+    "paid": "Paid with PayPal",
+    "balance": "Balance at the salon",
+    "ref": "Booking reference",
+    "total": "Deposit and fee"
+  },
+  "payment": {
+    "title": "Payment",
+    "loading": "Loading PayPal…",
+    "capturing": "Confirming your payment…",
+    "pending": "PayPal is still processing your payment. This page updates by itself.",
+    "cancelled": "Payment cancelled. Your slot is still held: you can try again.",
+    "declined": "PayPal declined this payment. Please try again with another payment method.",
+    "error": "Something went wrong with PayPal. Please try again.",
+    "sdkError": "The PayPal buttons could not load. Please use the link below.",
+    "prepareError": "We could not prepare your payment.",
+    "retry": "Try again",
+    "secure": "You pay in PayPal's secure window.",
+    "fallback": "Pay on PayPal.com",
+    "simulator": "Pay (sandbox simulator)",
+    "simulatorNote": "Test mode: no real money moves."
+  },
+  "details": {
+    "title": "Your details",
+    "firstName": "First name",
+    "firstNameError": "Please enter your first name.",
+    "phone": "Mobile (optional)",
+    "phoneHint": "So {pro} can reach you about your appointment.",
+    "phoneError": "This number doesn't look right. For example: {example}",
+    "phoneErrorPlain": "This number doesn't look right.",
+    "needed": "Enter your first name to pay."
+  },
+  "confirmed": {
+    "paidTitle": "Deposit paid",
+    "paidNote": "{amount} paid with PayPal."
+  },
+  "actions": {
+    "newSlot": "Ask the front desk for a new slot",
+    "backToChat": "Back to the chat"
+  },
+  "policy": "Deposit and cancellation",
+  "error": {
+    "title": "This page could not load",
+    "body": "Please try again in a moment.",
+    "retry": "Try again"
+  }
+}

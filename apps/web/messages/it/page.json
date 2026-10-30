@@ -1,0 +1,65 @@
+{
+  "metaDescription": "Prenota da {name} in chat. Acconto con PayPal, conferma in pochi secondi.",
+  "share": "Condividi la pagina",
+  "linkCopied": "Link copiato",
+  "sections": "Sezioni della pagina",
+  "tabs": {
+    "services": "Servizi",
+    "photos": "Foto",
+    "shop": "Shop",
+    "reviews": "Recensioni",
+    "infos": "Info"
+  },
+  "services": {
+    "from": "da {price}",
+    "durationRange": "da {min} a {max}",
+    "pricingNote": "Prezzo e durata si calcolano in base alle tue opzioni.",
+    "uncategorised": "Altri servizi",
+    "empty": "{name} non ha ancora messo servizi online.",
+    "more": "Vedi altri # servizi",
+    "less": "Vedi meno"
+  },
+  "photos": {
+    "alt": "Lavoro di {name}, foto {n}",
+    "strip": "Foto di {name}",
+    "all": "Vedi tutte le # foto"
+  },
+  "infos": {
+    "hours": "Orari",
+    "closed": "Chiuso",
+    "dayRange": "{first}–{last}",
+    "dayPair": "{first} e {last}",
+    "timeRange": "{from}–{to}",
+    "about": "Presentazione",
+    "address": "Indirizzo",
+    "addressNote": "L’indirizzo esatto ti arriva dopo la prenotazione.",
+    "policy": "Acconto e annullamento",
+    "onTheDay": "Ritardi / Da sapere",
+    "contact": "Contatti",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram"
+  },
+  "facts": {
+    "reviews": "({count, plural, one {# recensione} other {# recensioni}})",
+    "anytime": "Prenotazione 24 ore su 24",
+    "instant": "Conferma immediata",
+    "deposit": "Acconto online",
+    "payment": "Pagamento online"
+  },
+  "bar": {
+    "book": "Prenota",
+    "label": "Front desk IA",
+    "value": "Risponde 24/7",
+    "chat": "Prenota in chat"
+  },
+  "card": {
+    "depositFixed": "Acconto di {amount} con PayPal alla prenotazione.",
+    "depositPercent": "Acconto: {percent}% con PayPal alla prenotazione.",
+    "depositFull": "Pagamento completo con PayPal alla prenotazione.",
+    "addressAfterPayment": "L’indirizzo appare dopo il pagamento.",
+    "title": "Prenota in chat",
+    "intro": "Chiedi un orario, scegli uno slot e paga l’acconto con PayPal. Il suo front desk risponde in pochi secondi.",
+    "whatsapp": "Preferisci WhatsApp? Prova lo stesso front desk lì"
+  },
+  "language": "Lingua"
+}

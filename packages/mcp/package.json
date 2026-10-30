@@ -1,0 +1,19 @@
+{
+  "name": "@kitoko/mcp",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "test": "vitest run --project unit",
+    "test:int": "vitest run --project int"
+  },
+  "dependencies": {"@kitoko/agent": "workspace:*", "@kitoko/booking": "workspace:*", "@kitoko/db": "workspace:*", "@modelcontextprotocol/sdk": "1.32.1", "zod": "4.6.7"},
+  "devDependencies": {
+    "@kitoko/config": "workspace:*"
+  }
+}

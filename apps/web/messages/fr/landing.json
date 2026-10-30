@@ -1,0 +1,35 @@
+{
+  "metaTitle": "Kitoko · AI front desk",
+  "metaDescription": "Un accueil IA pour les prothésistes ongulaires, tresseuses et techniciennes cils indépendantes : il réserve par chat, encaisse l’acompte avec PayPal et gère les jours de maladie.",
+  "badge": "Démo en direct · PayPal sandbox",
+  "title": "Un accueil IA pour les prothésistes ongulaires, tresseuses et techniciennes cils indépendantes.",
+  "pitch": "Il réserve par chat dans toutes les langues, encaisse l’acompte avec PayPal et gère les jours de maladie.",
+  "proLogin": "Connexion",
+  "demo": {
+    "title": "Réserve chez une styliste de démo",
+    "intro": "Ouvre une page, touche « Réserver par chat » et paie l’acompte avec un compte PayPal sandbox."
+  },
+  "pros": {
+    "aicha": "Tresses · Milan",
+    "anta": "Tresses · Milan",
+    "nala": "Studio coiffure · Lyon",
+    "kemi": "Ongles · Londres"
+  },
+  "more": {
+    "title": "Explorer la démo",
+    "button": "Explorer",
+    "dashboard": {
+      "title": "Espace styliste",
+      "body": "Connecte-toi comme une styliste de démo : agenda en direct, acomptes et son assistante."
+    },
+    "howItWorks": {
+      "title": "Comment ça marche",
+      "body": "Chaque appel d’outil de l’agent et chaque événement PayPal d’une réservation, étape par étape."
+    },
+    "mcp": {
+      "title": "Serveur MCP",
+      "body": "N’importe quel agent IA peut chercher une styliste et réserver avec acompte."
+    }
+  },
+  "footer": "Sandbox uniquement : aucun argent réel ne circule. Prix, acomptes et remboursements sont calculés par le code, jamais par le modèle."
+}

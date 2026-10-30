@@ -1,0 +1,65 @@
+{
+  "metaDescription": "Reserva con {name} por chat. Señal con PayPal, confirmación en segundos.",
+  "share": "Compartir la página",
+  "linkCopied": "Enlace copiado",
+  "sections": "Secciones de la página",
+  "tabs": {
+    "services": "Servicios",
+    "photos": "Fotos",
+    "shop": "Tienda",
+    "reviews": "Reseñas",
+    "infos": "Info"
+  },
+  "services": {
+    "from": "desde {price}",
+    "durationRange": "{min} a {max}",
+    "pricingNote": "El precio y la duración dependen de tus opciones.",
+    "uncategorised": "Otros servicios",
+    "empty": "{name} todavía no ha publicado ningún servicio.",
+    "more": "Ver # servicios más",
+    "less": "Ver menos"
+  },
+  "photos": {
+    "alt": "Trabajo de {name}, foto {n}",
+    "strip": "Fotos de {name}",
+    "all": "Ver las # fotos"
+  },
+  "infos": {
+    "hours": "Horario",
+    "closed": "Cerrado",
+    "dayRange": "{first} a {last}",
+    "dayPair": "{first} y {last}",
+    "timeRange": "{from} a {to}",
+    "about": "Presentación",
+    "address": "Dirección",
+    "addressNote": "Te enviamos la dirección exacta después de reservar.",
+    "policy": "Señal y cancelación",
+    "onTheDay": "Retrasos / A tener en cuenta",
+    "contact": "Contacto",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram"
+  },
+  "facts": {
+    "reviews": "({count, plural, one {# reseña} other {# reseñas}})",
+    "anytime": "Reserva las 24 horas",
+    "instant": "Confirmación inmediata",
+    "deposit": "Señal online",
+    "payment": "Pago online"
+  },
+  "bar": {
+    "book": "Reservar",
+    "label": "Recepción IA",
+    "value": "Responde 24/7",
+    "chat": "Reservar por chat"
+  },
+  "card": {
+    "depositFixed": "Señal de {amount} con PayPal al reservar.",
+    "depositPercent": "Señal del {percent} % con PayPal al reservar.",
+    "depositFull": "Pago completo con PayPal al reservar.",
+    "addressAfterPayment": "La dirección aparece tras el pago.",
+    "title": "Reservar por chat",
+    "intro": "Pide una hora, elige un hueco y paga la señal con PayPal. Su recepción responde en segundos.",
+    "whatsapp": "¿Prefieres WhatsApp? Prueba la misma recepción allí"
+  },
+  "language": "Idioma"
+}

@@ -1,0 +1,42 @@
+{
+  "close": "Cerrar",
+  "subtitle": "Recepción IA · responde al momento",
+  "greeting": "¡Hola! Soy la recepción IA de {name}. Pregúnteme por un horario, un precio o lo que quiera saber de sus servicios. Puedo reservarle un hueco y enviarle el enlace de PayPal para la señal.",
+  "try": "Pruebe por ejemplo",
+  "openers": {
+    "free": "¿Tienen hueco el sábado?",
+    "price": "¿Cuánto cuesta {service}?",
+    "book": "Quisiera {service} la semana que viene",
+    "services": "¿Qué servicios ofrecen?"
+  },
+  "world": {
+    "fallback": "una cita",
+    "en": "Hi! {service} on Saturday?",
+    "fr": "Bonjour ! {service} samedi, c'est possible ?",
+    "it": "Ciao! {service} sabato?",
+    "es": "¡Hola! ¿{service} el sábado?",
+    "pt": "Olá! {service} no sábado?"
+  },
+  "anyLanguage": "Escriba en el idioma que prefiera: la recepción le responde en el suyo.",
+  "prefill": "Quisiera {service}",
+  "inputLabel": "Su mensaje",
+  "placeholder": "Escriba un mensaje…",
+  "send": "Enviar",
+  "typing": "La recepción de {name} está escribiendo",
+  "tapToReply": "Toque para responder",
+  "choices": "Respuestas rápidas",
+  "working": "La recepción se está ocupando",
+  "restoring": "Cargando su conversación…",
+  "notSent": "No enviado. Toque para reintentar",
+  "tools": {
+    "list_services": "Miro los servicios…",
+    "get_availability": "Compruebo la disponibilidad…",
+    "hold_slot": "Le reservo el hueco…",
+    "create_deposit_link": "Creo su enlace de PayPal…",
+    "list_my_bookings": "Busco su cita…",
+    "reschedule_booking": "Cambio su cita…",
+    "cancel_booking": "Cancelo su cita…",
+    "handoff_to_pro": "Le paso su mensaje a {name}…",
+    "other": "Me ocupo…"
+  }
+}

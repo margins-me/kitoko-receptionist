@@ -1,0 +1,42 @@
+{
+  "close": "Close",
+  "subtitle": "AI front desk · replies instantly",
+  "greeting": "Hello! I'm the AI front desk for {name}. Ask me for a time, a price or anything about her services. I can hold a slot for you and send the PayPal link for the deposit.",
+  "try": "Try one of these",
+  "openers": {
+    "free": "Are you free on Saturday?",
+    "price": "How much is {service}?",
+    "book": "I'd like {service} next week",
+    "services": "What services do you offer?"
+  },
+  "world": {
+    "fallback": "an appointment",
+    "en": "Hi! {service} on Saturday?",
+    "fr": "Bonjour ! {service} samedi, c'est possible ?",
+    "it": "Ciao! {service} sabato?",
+    "es": "¡Hola! ¿{service} el sábado?",
+    "pt": "Olá! {service} no sábado?"
+  },
+  "anyLanguage": "Write in any language: the front desk replies in yours.",
+  "prefill": "I'd like {service}",
+  "inputLabel": "Your message",
+  "placeholder": "Write a message…",
+  "send": "Send",
+  "typing": "{name}'s front desk is writing",
+  "tapToReply": "Tap to reply",
+  "choices": "Quick replies",
+  "working": "The front desk is working on it",
+  "restoring": "Loading your conversation…",
+  "notSent": "Not sent. Tap to try again",
+  "tools": {
+    "list_services": "Looking at the services…",
+    "get_availability": "Checking availability…",
+    "hold_slot": "Holding your slot…",
+    "create_deposit_link": "Creating your PayPal link…",
+    "list_my_bookings": "Finding your booking…",
+    "reschedule_booking": "Moving your appointment…",
+    "cancel_booking": "Cancelling your appointment…",
+    "handoff_to_pro": "Passing your message to {name}…",
+    "other": "Working on it…"
+  }
+}

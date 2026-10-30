@@ -1,0 +1,35 @@
+{
+  "metaTitle": "Kitoko · AI front desk",
+  "metaDescription": "An AI front desk for independent nail techs, braiders and lash artists: it books by chat, takes the deposit with PayPal and handles the sick day.",
+  "badge": "Live demo · PayPal sandbox",
+  "title": "An AI front desk for independent nail techs, braiders and lash artists.",
+  "pitch": "It books by chat in any language, takes the deposit with PayPal and handles the sick day.",
+  "proLogin": "Log in",
+  "demo": {
+    "title": "Book with a demo stylist",
+    "intro": "Open a page, tap “Chat to book” and pay the deposit with a PayPal sandbox account."
+  },
+  "pros": {
+    "aicha": "Braids · Milan",
+    "anta": "Braids · Milan",
+    "nala": "Hair studio · Lyon",
+    "kemi": "Nails · London"
+  },
+  "more": {
+    "title": "Explore the demo",
+    "button": "Explore",
+    "dashboard": {
+      "title": "Stylist dashboard",
+      "body": "Sign in as a demo stylist: live calendar, deposits and her own assistant."
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "body": "Every agent tool call and PayPal event of a booking, step by step."
+    },
+    "mcp": {
+      "title": "MCP server",
+      "body": "Let any AI agent search stylists and book with a deposit."
+    }
+  },
+  "footer": "Sandbox only: no real money moves. Prices, deposits and refunds are computed by code, never by the model."
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@kitoko/i18n",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@kitoko/config": "workspace:*"
+  }
+}

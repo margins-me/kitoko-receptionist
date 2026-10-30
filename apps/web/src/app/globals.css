@@ -1,0 +1,59 @@
+@import "@kitoko/ui/styles.css";
+@source "../";
+
+/* The landing's own neutrals, on top of @kitoko/ui's roles: black, white, stone, and honey as the only accent. */
+@theme {
+  --color-stone: #f2f0ed;
+  --color-stone-line: #e4e0da;
+  --container-page: 1120px;
+  --tracking-hero: -0.035em;
+}
+
+/* Landing entrance: sections rise and fade in one after another (--d sets each delay). Off for reduced motion. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up {
+    animation: fade-up 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: var(--d, 0ms);
+  }
+}
+
+/* The landing's sheet rises from the bottom on phones, slides in from the right on wider screens; its backdrop fades. */
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes sheet-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sheet[open] {
+    animation: sheet-up 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .sheet[open]::backdrop {
+    animation: backdrop-in 0.32s ease-out;
+  }
+  @media (min-width: 640px) {
+    .sheet[open] {
+      animation-name: sheet-in;
+    }
+  }
+}
+
+/* The page behind an open sheet does not scroll. */
+html:has(dialog.sheet[open]) {
+  overflow: hidden;
+}

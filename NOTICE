@@ -1,0 +1,15 @@
+Kitoko Receptionist
+Copyright (C) 2026 Kalidou Diagne
+
+This program is free software: you can redistribute it and/or modify it under the terms of the
+GNU Affero General Public License as published by the Free Software Foundation, version 3 (see LICENSE).
+
+Additional permission under GNU AGPL version 3 section 7
+
+If you modify this Program, or any covered work, by linking or combining it with Bryntum Scheduler
+or Bryntum Calendar (the @bryntum/* packages, or a modified version of those libraries), containing
+parts covered by the terms of the Bryntum End User License Agreement, the licensors of this Program
+grant you additional permission to convey the resulting work.
+
+The Bryntum libraries are not part of this repository. They are installed from npm (the trial
+packages) and are licensed by Bryntum AB under its own terms.

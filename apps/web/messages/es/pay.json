@@ -1,0 +1,79 @@
+{
+  "metaTitle": "Señal · {pro}",
+  "secure": "Pago seguro",
+  "title": {
+    "held": "Pague la señal",
+    "confirmed": "Reserva hecha",
+    "expired": "Este hueco ya no está reservado",
+    "cancelled": "Reserva cancelada"
+  },
+  "lead": {
+    "held": "Su hueco con {pro} queda reservado mientras paga. El resto se paga en el salón.",
+    "confirmed": "{pro} le espera. La confirmación también está en el chat.",
+    "expired": "La reserva caducó antes del pago. No se ha cobrado nada.",
+    "cancelled": "Esta reserva se ha cancelado.",
+    "refunded": "Esta reserva se ha cancelado. Cualquier reembolso vuelve a la cuenta de PayPal con la que pagó.",
+    "slotLost": "Alguien reservó este hueco justo antes de que se completara su pago. Se le ha reembolsado el importe íntegro."
+  },
+  "hold": {
+    "left": "Hueco reservado durante <b>{time}</b>"
+  },
+  "status": {
+    "held": "Reservado",
+    "confirmed": "Confirmada",
+    "expired": "Caducada",
+    "cancelled": "Cancelada"
+  },
+  "ticket": {
+    "range": "de {from} a {to}",
+    "with": "con {staff}",
+    "price": "Precio del servicio",
+    "deposit": "Señal",
+    "fee": "Gastos de reserva",
+    "toPay": "A pagar ahora",
+    "paid": "Pagado con PayPal",
+    "balance": "Resto en el salón",
+    "ref": "Referencia de la reserva",
+    "total": "Señal y gastos"
+  },
+  "payment": {
+    "title": "Pago",
+    "loading": "Cargando PayPal…",
+    "capturing": "Confirmando su pago…",
+    "pending": "PayPal aún está procesando su pago. Esta página se actualiza sola.",
+    "cancelled": "Pago cancelado. Su hueco sigue reservado: puede volver a intentarlo.",
+    "declined": "PayPal ha rechazado este pago. Inténtelo de nuevo con otro método de pago.",
+    "error": "Ha habido un problema con PayPal. Inténtelo de nuevo.",
+    "sdkError": "No se han podido cargar los botones de PayPal. Use el enlace de abajo.",
+    "prepareError": "No hemos podido preparar su pago.",
+    "retry": "Reintentar",
+    "secure": "Paga en la ventana segura de PayPal.",
+    "fallback": "Pagar en PayPal.com",
+    "simulator": "Pagar (simulador sandbox)",
+    "simulatorNote": "Modo de prueba: no se mueve dinero real."
+  },
+  "details": {
+    "title": "Sus datos",
+    "firstName": "Nombre",
+    "firstNameError": "Escriba su nombre.",
+    "phone": "Móvil (opcional)",
+    "phoneHint": "Para que {pro} pueda contactarle sobre su cita.",
+    "phoneError": "Este número no parece correcto. Por ejemplo: {example}",
+    "phoneErrorPlain": "Este número no parece correcto.",
+    "needed": "Escriba su nombre para pagar."
+  },
+  "confirmed": {
+    "paidTitle": "Señal pagada",
+    "paidNote": "{amount} pagados con PayPal."
+  },
+  "actions": {
+    "newSlot": "Pida otro hueco en el chat",
+    "backToChat": "Volver al chat"
+  },
+  "policy": "Señal y cancelación",
+  "error": {
+    "title": "No se ha podido cargar esta página",
+    "body": "Inténtelo de nuevo en un momento.",
+    "retry": "Reintentar"
+  }
+}

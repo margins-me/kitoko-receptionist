@@ -1,0 +1,65 @@
+{
+  "metaDescription": "Book with {name} by chat. Deposit with PayPal, confirmation in seconds.",
+  "share": "Share this page",
+  "linkCopied": "Link copied",
+  "sections": "Page sections",
+  "tabs": {
+    "services": "Services",
+    "photos": "Photos",
+    "shop": "Shop",
+    "reviews": "Reviews",
+    "infos": "Info"
+  },
+  "services": {
+    "from": "from {price}",
+    "durationRange": "{min} to {max}",
+    "pricingNote": "Price and duration depend on your options.",
+    "uncategorised": "Other services",
+    "empty": "{name} has not put any services online yet.",
+    "more": "See # more services",
+    "less": "See less"
+  },
+  "photos": {
+    "alt": "Work by {name}, photo {n}",
+    "strip": "Photos of {name}",
+    "all": "See all # photos"
+  },
+  "infos": {
+    "hours": "Opening hours",
+    "closed": "Closed",
+    "dayRange": "{first} to {last}",
+    "dayPair": "{first} and {last}",
+    "timeRange": "{from} to {to}",
+    "about": "About",
+    "address": "Address",
+    "addressNote": "You get the exact address after booking.",
+    "policy": "Deposit and cancellation",
+    "onTheDay": "Lateness / Good to know",
+    "contact": "Contact",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram"
+  },
+  "facts": {
+    "reviews": "({count, plural, one {# review} other {# reviews}})",
+    "anytime": "Book 24/7",
+    "instant": "Instant confirmation",
+    "deposit": "Deposit paid online",
+    "payment": "Paid online"
+  },
+  "bar": {
+    "book": "Book",
+    "label": "AI front desk",
+    "value": "Replies 24/7",
+    "chat": "Chat to book"
+  },
+  "card": {
+    "depositFixed": "{amount} deposit with PayPal when you book.",
+    "depositPercent": "{percent}% deposit with PayPal when you book.",
+    "depositFull": "Full payment with PayPal when you book.",
+    "addressAfterPayment": "The address shows after payment.",
+    "title": "Book by chat",
+    "intro": "Ask for a time, pick a slot and pay the deposit with PayPal. Her front desk replies in seconds.",
+    "whatsapp": "Prefer WhatsApp? Try the same front desk there"
+  },
+  "language": "Language"
+}

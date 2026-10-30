@@ -1,0 +1,65 @@
+{
+  "metaDescription": "Réserve chez {name} par chat. Acompte avec PayPal, confirmation en quelques secondes.",
+  "share": "Partager la page",
+  "linkCopied": "Lien copié",
+  "sections": "Sections de la page",
+  "tabs": {
+    "services": "Prestations",
+    "photos": "Photos",
+    "shop": "Boutique",
+    "reviews": "Avis",
+    "infos": "Infos"
+  },
+  "services": {
+    "from": "dès {price}",
+    "durationRange": "{min} à {max}",
+    "pricingNote": "Le prix et la durée se calculent selon tes options.",
+    "uncategorised": "Autres prestations",
+    "empty": "{name} n’a pas encore mis de prestation en ligne.",
+    "more": "Voir les # autres prestations",
+    "less": "Voir moins"
+  },
+  "photos": {
+    "alt": "Réalisation de {name}, photo {n}",
+    "strip": "Photos de {name}",
+    "all": "Voir les # photos"
+  },
+  "infos": {
+    "hours": "Horaires",
+    "closed": "Fermé",
+    "dayRange": "{first} au {last}",
+    "dayPair": "{first} et {last}",
+    "timeRange": "{from} à {to}",
+    "about": "Présentation",
+    "address": "Adresse",
+    "addressNote": "L’adresse exacte t’est envoyée après ta réservation.",
+    "policy": "Acompte et annulation",
+    "onTheDay": "Retard / À prévoir",
+    "contact": "Contact",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram"
+  },
+  "facts": {
+    "reviews": "({count, plural, one {# avis} other {# avis}})",
+    "anytime": "Réservation 24h/24",
+    "instant": "Confirmation immédiate",
+    "deposit": "Acompte en ligne",
+    "payment": "Paiement en ligne"
+  },
+  "bar": {
+    "book": "Réserver",
+    "label": "Accueil IA",
+    "value": "Répond 24h/24",
+    "chat": "Réserver par chat"
+  },
+  "card": {
+    "depositFixed": "Acompte {amount} avec PayPal à la réservation.",
+    "depositPercent": "Acompte de {percent} % avec PayPal à la réservation.",
+    "depositFull": "Paiement complet avec PayPal à la réservation.",
+    "addressAfterPayment": "L’adresse s’affiche après le paiement.",
+    "title": "Réserver par chat",
+    "intro": "Demande un horaire, choisis un créneau et paie l’acompte avec PayPal. Son accueil répond en quelques secondes.",
+    "whatsapp": "Plutôt WhatsApp ? Essaie le même accueil là-bas"
+  },
+  "language": "Langue"
+}

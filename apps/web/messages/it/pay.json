@@ -1,0 +1,79 @@
+{
+  "metaTitle": "Acconto · {pro}",
+  "secure": "Pagamento sicuro",
+  "title": {
+    "held": "Paghi l'acconto",
+    "confirmed": "Prenotazione fatta",
+    "expired": "Questo posto non è più riservato",
+    "cancelled": "Prenotazione annullata"
+  },
+  "lead": {
+    "held": "Il suo posto con {pro} è riservato mentre paga. Il resto si paga in salone.",
+    "confirmed": "{pro} la aspetta. La conferma è anche nella chat.",
+    "expired": "La riserva è scaduta prima del pagamento. Non è stato addebitato nulla.",
+    "cancelled": "Questa prenotazione è stata annullata.",
+    "refunded": "Questa prenotazione è stata annullata. Un eventuale rimborso torna sul conto PayPal con cui ha pagato.",
+    "slotLost": "Questo posto è stato preso appena prima che il pagamento andasse a buon fine. Il pagamento le è stato rimborsato per intero."
+  },
+  "hold": {
+    "left": "Posto riservato ancora per <b>{time}</b>"
+  },
+  "status": {
+    "held": "Riservato",
+    "confirmed": "Confermato",
+    "expired": "Scaduto",
+    "cancelled": "Annullato"
+  },
+  "ticket": {
+    "range": "dalle {from} alle {to}",
+    "with": "con {staff}",
+    "price": "Prezzo del servizio",
+    "deposit": "Acconto",
+    "fee": "Costo di prenotazione",
+    "toPay": "Da pagare ora",
+    "paid": "Pagato con PayPal",
+    "balance": "Saldo in salone",
+    "ref": "Codice prenotazione",
+    "total": "Acconto e costi"
+  },
+  "payment": {
+    "title": "Pagamento",
+    "loading": "Caricamento di PayPal…",
+    "capturing": "Conferma del pagamento…",
+    "pending": "PayPal sta ancora elaborando il pagamento. Questa pagina si aggiorna da sola.",
+    "cancelled": "Pagamento annullato. Il suo posto è ancora riservato: può riprovare.",
+    "declined": "PayPal ha rifiutato il pagamento. Riprovi con un altro metodo di pagamento.",
+    "error": "Si è verificato un problema con PayPal. Riprovi.",
+    "sdkError": "Non è stato possibile caricare i pulsanti PayPal. Usi il link qui sotto.",
+    "prepareError": "Non è stato possibile preparare il pagamento.",
+    "retry": "Riprova",
+    "secure": "Paga nella finestra sicura di PayPal.",
+    "fallback": "Paghi su PayPal.com",
+    "simulator": "Paga (simulatore sandbox)",
+    "simulatorNote": "Modalità test: nessun addebito reale."
+  },
+  "details": {
+    "title": "I suoi dati",
+    "firstName": "Nome",
+    "firstNameError": "Inserisca il suo nome.",
+    "phone": "Cellulare (facoltativo)",
+    "phoneHint": "Così {pro} può contattarla per l'appuntamento.",
+    "phoneError": "Questo numero non sembra corretto. Ad esempio: {example}",
+    "phoneErrorPlain": "Questo numero non sembra corretto.",
+    "needed": "Inserisca il suo nome per pagare."
+  },
+  "confirmed": {
+    "paidTitle": "Acconto pagato",
+    "paidNote": "{amount} pagati con PayPal."
+  },
+  "actions": {
+    "newSlot": "Chieda un altro orario",
+    "backToChat": "Torni alla chat"
+  },
+  "policy": "Acconto e cancellazione",
+  "error": {
+    "title": "Impossibile caricare la pagina",
+    "body": "Riprovi tra un momento.",
+    "retry": "Riprova"
+  }
+}

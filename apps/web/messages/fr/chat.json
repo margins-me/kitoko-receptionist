@@ -1,0 +1,42 @@
+{
+  "close": "Fermer",
+  "subtitle": "Accueil IA · répond aussitôt",
+  "greeting": "Bonjour ! Je suis l’accueil IA de {name}. Demandez-moi un créneau, un prix ou tout ce que vous voulez savoir sur ses prestations. Je peux vous garder un créneau et vous envoyer le lien PayPal pour l'acompte.",
+  "try": "Essayez par exemple",
+  "openers": {
+    "free": "Vous avez de la place samedi ?",
+    "price": "Combien coûte {service} ?",
+    "book": "Je voudrais {service} la semaine prochaine",
+    "services": "Quelles prestations proposez-vous ?"
+  },
+  "world": {
+    "fallback": "un rendez-vous",
+    "en": "Hi! {service} on Saturday?",
+    "fr": "Bonjour ! {service} samedi, c'est possible ?",
+    "it": "Ciao! {service} sabato?",
+    "es": "¡Hola! ¿{service} el sábado?",
+    "pt": "Olá! {service} no sábado?"
+  },
+  "anyLanguage": "Écrivez dans la langue de votre choix : l’accueil vous répond dans la vôtre.",
+  "prefill": "Je voudrais {service}",
+  "inputLabel": "Votre message",
+  "placeholder": "Écrivez un message…",
+  "send": "Envoyer",
+  "typing": "L’accueil de {name} écrit",
+  "tapToReply": "Touchez pour répondre",
+  "choices": "Réponses rapides",
+  "working": "L’accueil s’en occupe",
+  "restoring": "Chargement de votre conversation…",
+  "notSent": "Non envoyé. Touchez pour réessayer",
+  "tools": {
+    "list_services": "Je regarde les prestations…",
+    "get_availability": "Je vérifie les disponibilités…",
+    "hold_slot": "Je vous garde le créneau…",
+    "create_deposit_link": "Je crée votre lien PayPal…",
+    "list_my_bookings": "Je cherche votre rendez-vous…",
+    "reschedule_booking": "Je déplace votre rendez-vous…",
+    "cancel_booking": "J'annule votre rendez-vous…",
+    "handoff_to_pro": "Je transmets votre message à {name}…",
+    "other": "Je m'en occupe…"
+  }
+}

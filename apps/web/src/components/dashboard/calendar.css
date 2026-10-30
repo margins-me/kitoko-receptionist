@@ -1,0 +1,902 @@
+/* Bryntum Scheduler in Kitoko's look: Hanken Grotesk, black / white / stone, honey as the only accent.
+   Colours come from the design tokens (packages/ui/src/styles.css, apps/web globals.css), never literals. */
+
+.kt-calendar {
+  --b-primary: var(--color-ink);
+  --b-widget-border-radius: 12px;
+  --b-grid-header-font-weight: 600;
+  --b-grid-row-border-color: var(--color-hairline);
+  --b-sch-event-border-radius: 10px;
+  --b-sch-event-font-size: 12px;
+  --b-sch-event-font-weight: 500;
+  --b-sch-event-padding-inline: 8px;
+  --b-sch-event-padding-block: 6px;
+  font-family: var(--font-hanken), system-ui, sans-serif;
+  height: 100%;
+}
+
+.kt-calendar .b-scheduler,
+.kt-calendar .b-grid-header,
+.kt-calendar .b-widget,
+.b-tooltip,
+.b-menu {
+  font-family: var(--font-hanken), system-ui, sans-serif;
+}
+
+.kt-calendar .b-react-scheduler-container {
+  height: 100%;
+}
+
+.kt-calendar .b-grid-header-text,
+.kt-calendar .b-sch-header-text {
+  color: var(--color-ink);
+}
+
+/* Time axis: hours on top, a quiet ":30" row under them; half hours are fainter lines than hours. */
+.kt-calendar .b-sch-header-row-0 .b-sch-header-time-axis-cell {
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  justify-content: flex-start;
+  padding-inline-start: 6px;
+}
+
+.kt-calendar .b-sch-header-row-1 .b-sch-header-time-axis-cell {
+  font-size: 10px;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+  justify-content: flex-start;
+  padding-inline-start: 4px;
+  min-height: 18px;
+}
+
+.kt-calendar .b-sch-header-row-1 .b-sch-header-time-axis-cell:not(:empty) {
+  border-inline-start-style: dashed;
+}
+
+.kt-calendar .b-column-line {
+  border-color: color-mix(in srgb, var(--color-hairline) 55%, transparent);
+  border-inline-start-style: dashed;
+}
+
+.kt-calendar .b-column-line-major {
+  border-color: var(--color-hairline);
+  border-inline-start-style: solid;
+}
+
+/* ---- row headers: the day ("Mon 26 Oct", today in honey) and / or the staff member ---------------------------- */
+
+.kt-calendar .kt-head-cell {
+  cursor: default;
+  padding-inline: 14px 10px;
+}
+
+.kt-cal-mode-week .kt-head-cell-day {
+  cursor: pointer;
+}
+
+.kt-cal-mode-week .kt-head-cell-day:hover .kt-head-date {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.kt-head {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.kt-head-day {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 6px;
+  color: var(--color-ink);
+}
+
+.kt-head-dow {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.kt-head-date {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-body);
+}
+
+.kt-head-pill {
+  align-self: center;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--color-honey);
+  color: var(--color-ink);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.kt-head-sub {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kt-head-quiet {
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.kt-head-hours {
+  font-weight: 500;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.kt-staff {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--color-ink);
+  min-width: 0;
+}
+
+.kt-staff-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  flex: none;
+}
+
+/* Merged day cell in a studio's week: the day label sits at the top of its rows. */
+.kt-calendar .b-grid-merged-cells {
+  align-items: flex-start;
+  padding-block-start: 12px;
+  background: var(--color-surface);
+}
+
+/* Today's rows: a honey wash across the whole row and a honey edge on its header. */
+.kt-calendar .b-grid-row.kt-row-today > .b-grid-cell {
+  background: color-mix(in srgb, var(--color-honey) 9%, var(--color-surface));
+}
+.kt-calendar .b-grid-subgrid-locked .b-grid-row.kt-row-today .kt-head-cell-day,
+.kt-calendar .b-grid-merged-cells:has(.kt-head-today) {
+  box-shadow: inset 3px 0 0 var(--color-honey);
+}
+
+/* A studio's week: a firmer line between days than between staff rows. */
+.kt-calendar .b-grid-row.kt-row-day-end {
+  border-block-end: 1px solid var(--color-outline);
+}
+
+/* ---- events: always horizontal, parts dropped as the bar narrows (container queries on the bar) ------------- */
+
+.kt-calendar .kt-ev .b-sch-event {
+  border-radius: 10px;
+  box-shadow: none;
+  border: 1.5px solid transparent;
+  overflow: hidden;
+  align-items: flex-start;
+  container-type: size;
+  container-name: kt-ev;
+  transition:
+    background-color 300ms ease,
+    opacity 300ms ease,
+    border-color 300ms ease;
+}
+
+.kt-calendar .kt-ev .b-sch-event-content {
+  align-self: stretch;
+  align-items: flex-start;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.kt-ev-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3px;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 1.25;
+}
+
+.kt-ev-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12.5px;
+}
+
+.kt-ev-who {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.kt-ev-svc {
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.kt-ev-foot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.kt-ev-time {
+  font-size: 11.5px;
+  font-weight: 600;
+  opacity: 0.9;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.kt-ev-chip {
+  max-width: 100%;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tall bars (the day view): who, service, time and status each get a line. */
+@container kt-ev (min-height: 88px) {
+  .kt-ev-body {
+    justify-content: flex-start;
+  }
+  .kt-ev-line {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .kt-ev-sep {
+    display: none;
+  }
+  .kt-ev-who,
+  .kt-ev-svc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .kt-ev-foot {
+    flex: 1;
+    gap: 6px;
+  }
+  .kt-ev-chip {
+    margin-top: auto;
+  }
+}
+
+/* Short bars (a studio's week): time and status share the second line. */
+@container kt-ev (max-height: 62px) {
+  .kt-ev-body {
+    justify-content: flex-start;
+  }
+  .kt-ev-foot {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+  }
+  .kt-ev-chip {
+    padding-block: 1px;
+  }
+}
+
+/* Short and narrow: no room for the status next to the time (the bar's colour and the tooltip carry it). */
+@container kt-ev (max-height: 62px) and (max-width: 150px) {
+  .kt-ev-chip {
+    display: none;
+  }
+}
+
+/* Narrow bars (widths are the bar's content box): the end time, then the status go; the tooltip has it all. */
+@container kt-ev (max-width: 72px) {
+  .kt-ev-end {
+    display: none;
+  }
+}
+@container kt-ev (max-width: 64px) {
+  .kt-ev-chip {
+    display: none;
+  }
+}
+@container kt-ev (max-width: 48px) {
+  .kt-ev-svc,
+  .kt-ev-sep {
+    display: none;
+  }
+  .kt-ev-who {
+    font-size: 12px;
+  }
+}
+
+/* Confirmed, deposit captured: solid ink. */
+.kt-calendar .kt-ev-confirmed .b-sch-event {
+  background: var(--color-ink);
+  color: var(--color-on-inverse);
+}
+.kt-ev-confirmed .kt-ev-chip {
+  background: color-mix(in srgb, var(--color-on-inverse) 16%, transparent);
+}
+
+/* Confirmed without a captured deposit (manual booking): outlined ink. */
+.kt-calendar .kt-ev-unpaid .b-sch-event {
+  background: var(--color-surface);
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+.kt-ev-unpaid .kt-ev-chip {
+  background: var(--color-soft);
+}
+
+/* Held, deposit not paid yet: striped honey with a live countdown. */
+.kt-calendar .kt-ev-held .b-sch-event {
+  color: var(--color-ink);
+  border-color: var(--color-honey);
+  background: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-honey) 30%, var(--color-surface)) 0 8px,
+    color-mix(in srgb, var(--color-honey) 12%, var(--color-surface)) 8px 16px
+  );
+}
+.kt-ev-held .kt-ev-chip {
+  background: var(--color-honey);
+  color: var(--color-ink);
+}
+
+/* Cancelled and refunded: struck through and faded, kept visible for the week. */
+.kt-calendar .kt-ev-cancelled .b-sch-event {
+  background: var(--color-soft);
+  color: var(--color-muted);
+  opacity: 0.75;
+}
+.kt-ev-cancelled .kt-ev-who,
+.kt-ev-cancelled .kt-ev-line {
+  text-decoration: line-through;
+}
+.kt-ev-cancelled .kt-ev-chip {
+  background: var(--color-surface);
+}
+
+/* Done with the balance still to pay at the salon: honey outline. */
+.kt-calendar .kt-ev-balance_due .b-sch-event {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  border: 2px solid var(--color-honey);
+}
+.kt-ev-balance_due .kt-ev-chip {
+  background: color-mix(in srgb, var(--color-honey) 20%, var(--color-surface));
+  color: var(--color-ink);
+}
+
+.kt-calendar .kt-ev-done .b-sch-event,
+.kt-calendar .kt-ev-no_show .b-sch-event {
+  background: var(--color-stone);
+  color: var(--color-body);
+  border-color: var(--color-stone-line);
+}
+.kt-ev-done .kt-ev-chip,
+.kt-ev-no_show .kt-ev-chip {
+  background: var(--color-surface);
+}
+
+/* Displaced by a sick day: dashed danger, waiting for the client's answer. */
+.kt-calendar .kt-ev-displaced .b-sch-event {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border: 2px dashed var(--color-danger);
+}
+.kt-ev-displaced .kt-ev-chip {
+  background: var(--color-danger);
+  color: var(--color-on-danger);
+}
+
+/* A move the pro proposed by dragging: a ghost until the client says yes. */
+.kt-calendar .kt-ev-ghost .b-sch-event {
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  color: var(--color-ink);
+  border: 2px dashed var(--color-honey);
+  cursor: default;
+}
+.kt-ev-ghost .kt-ev-chip {
+  background: color-mix(in srgb, var(--color-honey) 20%, var(--color-surface));
+}
+
+/* Everything behind the bookings is a resource time range; none of it takes the pointer (drag-create and the
+   context menu work through it). */
+.kt-calendar .b-sch-resource-time-range.kt-off,
+.kt-calendar .b-sch-resource-time-range.kt-free,
+.kt-calendar .b-sch-resource-time-range.kt-block,
+.kt-calendar .b-sch-resource-time-range.kt-now {
+  pointer-events: none;
+}
+
+/* Hours she is closed: a flat stone wash; a closed day says so. */
+.kt-calendar .b-sch-resource-time-range.kt-off {
+  background: color-mix(in srgb, var(--color-stone) 75%, transparent);
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  z-index: 0;
+}
+.kt-calendar .b-sch-resource-time-range.kt-off-break {
+  background: repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-stone) 80%, transparent) 0 4px,
+    color-mix(in srgb, var(--color-stone) 40%, transparent) 4px 8px
+  );
+}
+
+/* An open day with nothing in it. */
+.kt-calendar .b-sch-resource-time-range.kt-free {
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  z-index: 0;
+}
+.kt-calendar .b-sch-resource-time-range.kt-off [data-task-feature],
+.kt-calendar .b-sch-resource-time-range.kt-free [data-task-feature] {
+  width: 100%;
+  justify-content: center;
+}
+.kt-calendar .b-sch-resource-time-range.kt-off .b-sch-event-content,
+.kt-calendar .b-sch-resource-time-range.kt-free .b-sch-event-content {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  height: auto;
+}
+.kt-calendar .b-sch-resource-time-range.kt-free .b-sch-event-content::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-inline-end: 8px;
+  border-radius: 999px;
+  background: var(--color-success);
+  opacity: 0.7;
+}
+
+/* A studio's week: the row headers already say "Free all day"; one label per row would be noise. */
+.kt-cal-mode-studioWeek .b-sch-resource-time-range.kt-free {
+  display: none;
+}
+
+/* Blocked time (behind the bookings): grey hatching with its label. */
+.kt-calendar .b-sch-resource-time-range.kt-block {
+  color: var(--color-body);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  opacity: 1;
+  z-index: 1;
+  border-inline: 1px solid var(--color-outline);
+  background: repeating-linear-gradient(
+    -45deg,
+    color-mix(in srgb, var(--color-soft) 90%, transparent) 0 7px,
+    color-mix(in srgb, var(--color-outline) 85%, transparent) 7px 9px
+  );
+  padding: 6px 8px;
+}
+
+/* "Now" in her time zone: a honey line with a dot, in today's rows only. */
+.kt-calendar .b-sch-resource-time-range.kt-now {
+  width: 2px !important;
+  margin-inline-start: -1px;
+  padding: 0;
+  background: var(--color-honey);
+  overflow: visible;
+  z-index: 5;
+}
+.kt-calendar .b-sch-resource-time-range.kt-now::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--color-honey);
+  box-shadow: 0 0 0 2px var(--color-surface);
+}
+
+@keyframes kt-block-in {
+  from {
+    opacity: 0;
+    transform: scaleY(0.6);
+  }
+}
+
+.kt-calendar .b-sch-resource-time-range.kt-block-new {
+  animation: kt-block-in 600ms var(--ease-emphasized);
+}
+
+.kt-calendar .kt-ev.b-sch-event-wrap:not(.kt-ev-ghost) .b-sch-event:hover {
+  filter: brightness(0.97);
+}
+
+.kt-calendar .b-sch-event-selected.kt-ev .b-sch-event,
+.kt-calendar .kt-ev .b-sch-event.b-sch-event-selected {
+  outline: 2px solid var(--color-honey);
+  outline-offset: 2px;
+}
+
+/* Changed live (Realtime): a short honey pulse so the pro sees what moved. */
+@keyframes kt-flash {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-honey) 85%, transparent);
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.025);
+  }
+  100% {
+    box-shadow: 0 0 0 14px color-mix(in srgb, var(--color-honey) 0%, transparent);
+    transform: scale(1);
+  }
+}
+
+.kt-calendar .kt-flash .b-sch-event {
+  animation: kt-flash 1.4s var(--ease-emphasized) 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kt-calendar .kt-flash .b-sch-event {
+    animation: none;
+    outline: 2px solid var(--color-honey);
+  }
+}
+
+.kt-tip {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.kt-tip-hint {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+/* ---- bookable starts ------------------------------------------------------------------------------------------ */
+
+/* At rest: a small honey tick at each start where her shortest service fits, with the time when the row has few. */
+.kt-calendar .b-sch-resource-time-range.kt-tick {
+  pointer-events: none;
+  width: 2px !important;
+  margin-inline-start: -1px;
+  padding: 0;
+  background: transparent;
+  overflow: visible;
+  z-index: 0;
+}
+.kt-calendar .b-sch-resource-time-range.kt-tick::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 9px;
+  border-radius: 0 0 2px 2px;
+  background: var(--color-honey);
+}
+.kt-calendar .b-sch-resource-time-range.kt-tick > [data-task-feature] {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: visible;
+  background: transparent;
+}
+.kt-calendar .b-sch-resource-time-range.kt-tick .b-sch-event-content {
+  position: absolute;
+  display: block;
+  height: auto;
+  top: 1px;
+  left: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--color-honey) 55%, var(--color-ink));
+  white-space: nowrap;
+}
+.kt-calendar .b-sch-resource-time-range.kt-tick:not(.kt-tick-label) .b-sch-event-content {
+  display: none;
+}
+
+/* While dragging: the ticks give way to the drop zones, everything else steps back. */
+.kt-calendar .kt-dragging .b-sch-resource-time-range.kt-tick,
+.kt-calendar .kt-dragging .b-sch-resource-time-range.kt-free {
+  display: none;
+}
+.kt-calendar .kt-dragging .b-sch-timeaxis-cell {
+  background: color-mix(in srgb, var(--color-stone) 55%, var(--color-surface));
+}
+.kt-calendar .kt-dragging .kt-ev.b-sch-event-wrap:not(.b-dragging) {
+  opacity: 0.35;
+}
+
+/* A start the dragged booking can move to: a honey island, its time at the top. */
+.kt-calendar .b-sch-resource-time-range.kt-target {
+  pointer-events: none;
+  z-index: 1;
+  border: 1.5px dashed var(--color-honey);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--color-honey) 26%, var(--color-surface));
+  color: color-mix(in srgb, var(--color-honey) 45%, #000);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 6px;
+  align-items: flex-start;
+}
+
+/* Green when the drop will snap to a highlighted start, red when it will not. */
+.kt-calendar .kt-drop-ok .b-sch-event-wrap.b-dragging .b-sch-event {
+  outline: 2px solid var(--color-success);
+  outline-offset: 2px;
+}
+.kt-calendar .kt-drop-bad .b-sch-event-wrap.b-dragging .b-sch-event {
+  outline: 2px solid var(--color-danger);
+  outline-offset: 2px;
+  opacity: 0.8;
+}
+.kt-tip-ok strong {
+  color: var(--color-success);
+}
+.kt-tip-bad strong {
+  color: var(--color-danger);
+}
+
+/* ---- the agent-driven cascade ---------------------------------------------------------------------------------- */
+
+/* A time the receptionist offered a displaced booking's client: a dashed honey ghost until she picks. */
+.kt-calendar .kt-ev-offer .b-sch-event {
+  background: color-mix(in srgb, var(--color-honey) 10%, var(--color-surface));
+  color: var(--color-ink);
+  border: 2px dashed var(--color-honey);
+}
+.kt-ev-offer .kt-ev-chip {
+  background: color-mix(in srgb, var(--color-honey) 32%, var(--color-surface));
+  color: var(--color-ink);
+}
+@keyframes kt-offer-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.97);
+  }
+}
+.kt-calendar .kt-ev-offer .b-sch-event,
+.kt-calendar .kt-ev-ghost .b-sch-event {
+  animation: kt-offer-in 420ms var(--ease-emphasized) both;
+}
+
+/* The client answered: the other offers (and their lines) fade out before they leave the store. */
+.kt-calendar .kt-fading .b-sch-event {
+  animation: none;
+  opacity: 0;
+  transform: scale(0.94);
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
+}
+
+/* ✦ on a booking the receptionist changed on the client's answer. */
+.kt-ev-agent {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 4px;
+  border-radius: 999px;
+  background: var(--color-honey);
+  color: var(--color-ink);
+  font-size: 10px;
+  line-height: 1;
+  vertical-align: 1px;
+}
+.kt-tip-agent {
+  font-weight: 700;
+}
+
+/* Dependency lines from a displaced booking to the times offered for it (read-only). */
+.kt-calendar .b-sch-dependency.kt-dep {
+  stroke: var(--color-honey);
+  stroke-width: 2px;
+  stroke-dasharray: 5 4;
+  transition: opacity 600ms ease;
+}
+.kt-calendar .b-sch-dependency.kt-dep-proposal {
+  stroke: color-mix(in srgb, var(--color-honey) 60%, var(--color-ink));
+}
+.kt-calendar .b-sch-dependency.kt-dep-fading {
+  opacity: 0;
+}
+.kt-calendar .b-sch-dependency-arrow,
+.kt-calendar marker path {
+  fill: var(--color-honey);
+}
+@keyframes kt-dep-flow {
+  to {
+    stroke-dashoffset: -18;
+  }
+}
+.kt-calendar .b-sch-dependency.kt-dep-offer {
+  animation: kt-dep-flow 1.2s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .kt-calendar .b-sch-dependency.kt-dep-offer,
+  .kt-calendar .kt-ev-offer .b-sch-event,
+  .kt-calendar .kt-ev-ghost .b-sch-event {
+    animation: none;
+  }
+}
+
+/* ---- money columns (locked grid, week) -------------------------------------------------------------------------- */
+
+.kt-calendar .kt-money-cell {
+  padding-inline: 8px 12px;
+  justify-content: flex-end;
+}
+.kt-money {
+  font-size: 12.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink);
+}
+.kt-money-out {
+  color: var(--color-error);
+}
+.kt-money-paid {
+  color: var(--color-success);
+}
+.kt-money-zero {
+  color: var(--color-disabled);
+  font-weight: 500;
+}
+.kt-money-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.kt-calendar .b-grid-footer-container {
+  background: var(--color-soft);
+  border-top: 1px solid var(--color-hairline);
+}
+.kt-calendar .b-grid-footer {
+  padding-inline: 8px 12px;
+}
+.kt-calendar .b-grid-header .b-grid-header-text-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- the "Waiting for client" grid under the Scheduler ---------------------------------------------------------- */
+
+.kt-cascade {
+  background: var(--color-surface);
+}
+.kt-cascade .b-grid {
+  height: 100%;
+}
+.kt-cascade .b-react-grid-container,
+.kt-cascade > div {
+  height: 100%;
+}
+.kt-cascade .b-grid-row {
+  cursor: grab;
+}
+.kt-cascade .b-grid-row:hover > .b-grid-cell {
+  background: color-mix(in srgb, var(--color-honey) 10%, var(--color-surface));
+}
+.kt-cascade .b-grid-cell {
+  font-size: 12.5px;
+}
+.kt-cg-client {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.kt-cg-grip {
+  color: var(--color-muted);
+  font-size: 11px;
+}
+.kt-cg-was {
+  color: var(--color-error);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  font-variant-numeric: tabular-nums;
+}
+.kt-cg-chip {
+  display: inline-block;
+  margin-inline-end: 4px;
+  padding: 2px 8px;
+  border: 1.5px dashed var(--color-honey);
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  background: color-mix(in srgb, var(--color-honey) 10%, var(--color-surface));
+}
+.kt-cg-chip-proposed {
+  border-style: solid;
+}
+.kt-cg-status {
+  font-weight: 700;
+}
+.kt-cg-status-proposed {
+  color: color-mix(in srgb, var(--color-honey) 45%, var(--color-ink));
+}
+.kt-cg-muted {
+  color: var(--color-muted);
+}
+.kt-cg-lang {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--color-soft);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* The row dragged from the grid: a displaced booking's bar, sized to its length on the time axis. */
+.kt-grid-proxy {
+  z-index: 10000;
+  pointer-events: none;
+  font-family: var(--font-hanken), system-ui, sans-serif;
+}
+.kt-grid-proxy-bar {
+  height: 100%;
+  padding: 6px 8px;
+  border-radius: 10px;
+  border: 2px dashed var(--color-danger);
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  box-shadow: var(--shadow-modal);
+  overflow: hidden;
+  container-type: size;
+  container-name: kt-ev;
+}
+.kt-grid-proxy.kt-proxy-ok .kt-grid-proxy-bar {
+  outline: 2px solid var(--color-success);
+  outline-offset: 2px;
+}
+.kt-grid-proxy.kt-proxy-bad .kt-grid-proxy-bar {
+  outline: 2px solid var(--color-danger);
+  outline-offset: 2px;
+  opacity: 0.85;
+}
+.kt-calendar .kt-money-head {
+  padding-inline: 6px 10px;
+}
+.kt-cascade .b-grid-header {
+  min-height: 36px;
+}
+.kt-cascade .b-grid-header-text {
+  padding-block: 8px;
+  font-size: 12px;
+}

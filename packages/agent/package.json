@@ -1,0 +1,31 @@
+{
+  "name": "@kitoko/agent",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./services": "./src/services/index.ts",
+    "./tools": "./src/tools/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "test": "vitest run --project unit",
+    "test:int": "vitest run --project int"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.1.0",
+    "@kitoko/booking": "workspace:*",
+    "@kitoko/channels": "workspace:*",
+    "@kitoko/db": "workspace:*",
+    "@kitoko/i18n": "workspace:*",
+    "@kitoko/paypal": "workspace:*",
+    "@paypal/agent-toolkit": "1.11.0",
+    "server-only": "0.0.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@kitoko/config": "workspace:*"
+  }
+}

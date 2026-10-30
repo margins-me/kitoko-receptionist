@@ -1,0 +1,21 @@
+{
+  "close": "Close",
+  "book": "Book",
+  "retry": "Try again",
+  "share": "Share",
+  "loading": "Loading…",
+  "errors": {
+    "generic": "Something went wrong. Try again in a moment.",
+    "network": "No connection. Check your network and try again.",
+    "required": "This field is required."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This page doesn’t exist or is gone. Check the link you were sent."
+  },
+  "crash": {
+    "title": "Something went wrong",
+    "body": "This page couldn’t be shown. Try again, or go back to the home page.",
+    "home": "Back to the home page"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "close": "Chiudi",
+  "book": "Prenota",
+  "retry": "Riprova",
+  "share": "Condividi",
+  "loading": "Caricamento…",
+  "errors": {
+    "generic": "Qualcosa non ha funzionato. Riprova tra un attimo.",
+    "network": "Nessuna connessione. Controlla la rete e riprova.",
+    "required": "Questo campo è obbligatorio."
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "body": "Questa pagina non esiste o non esiste più. Controlla il link che ti hanno mandato."
+  },
+  "crash": {
+    "title": "Qualcosa non ha funzionato",
+    "body": "Non è stato possibile mostrare la pagina. Riprova o torna alla home.",
+    "home": "Torna alla home"
+  }
+}

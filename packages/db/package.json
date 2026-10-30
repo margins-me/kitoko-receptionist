@@ -1,0 +1,25 @@
+{
+  "name": "@kitoko/db",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "test": "vitest run --project unit",
+    "test:int": "vitest run --project int"
+  },
+  "dependencies": {
+    "@kitoko/booking": "workspace:*",
+    "@kitoko/i18n": "workspace:*",
+    "@supabase/supabase-js": "2.118.0",
+    "server-only": "0.0.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@kitoko/config": "workspace:*"
+  }
+}

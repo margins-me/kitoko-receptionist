@@ -1,0 +1,369 @@
+@import "tailwindcss" source(none);
+@source "./";
+@plugin "@kitoko/themes/tailwind";
+
+@theme {
+  --breakpoint-desk: 860px;
+
+  /* Kitoko's own neutrals are Sable's (the marketing site, apps/web): warm ink, sand lines and tiles. */
+  --color-ink: #1b1b1a;
+  --color-brand: #1b1b1a;
+  --color-surface: #ffffff;
+
+  /* Roles. Themes (packages/themes) override these on [data-theme]; markup never names a theme. */
+  --color-page: #ffffff;
+  --color-page-fg: #161616;
+  --color-page-chip: #f5f4f2;
+  --color-page-muted: #66625e;
+  --color-page-line: #e6e3df;
+  --color-accent: #161616;
+  --color-on-accent: #ffffff;
+  --color-on-brand: #ffffff;
+  --color-inverse: #1b1b1a;
+  --color-on-inverse: #ffffff;
+  --color-on-inverse-muted: #d8d4cf;
+  --color-on-danger: #ffffff;
+  --color-on-photo: #ffffff;
+  --color-photo-scrim: #0a0908;
+  --color-scrim: rgb(22 22 22 / 0.45);
+  --color-focus: #1b1b1a;
+
+  --color-muted: #6e6a65;
+  --color-body: #55514c;
+  --color-hairline: #e3ddd3;
+  --color-soft: #f3efe8;
+  --color-field: #8e8880;
+  --color-grip: #d6d0c6;
+  --color-placeholder: #6e6a65;
+  --color-disabled: #8a847e;
+  --color-ring-off: #8b857e;
+  --color-ground: #f3efe8;
+  --color-warning: #fbf0dc;
+  --color-error-bg: #fbeaea;
+  --color-error: #7a1f1f;
+  --color-danger: #9b2c2c;
+  --color-success: #2e6b45;
+  --color-outline: #d6d0c6;
+  --color-dash: #dcd5ca;
+  --color-honey: #c98a3b;
+  --color-device: #8c8986;
+  /* Desktop page background behind the white sidebar and panels (the pro app). */
+  --color-canvas: #fbfaf7;
+
+  /* Placeholder tones for products and photos not uploaded yet (canvas). Use bg-tone-N text-tone-N-fg. */
+  --color-tone-0: #efe6da;
+  --color-tone-0-fg: #3b2a22;
+  --color-tone-1: #e4eae5;
+  --color-tone-1-fg: #2f4a3e;
+  --color-tone-2: #f1e7d2;
+  --color-tone-2-fg: #8a5a1e;
+  --color-tone-3: #f2e6dc;
+  --color-tone-3-fg: #7a3e22;
+
+  /* Kitoko's own surfaces, rounder since Sable (2026-10-26): cards 20, inner boxes and fields 14. The dashboard makes its
+     buttons pills (apps/dashboard globals.css); the booking flow keeps 12 beside the pro page's own shapes. The pro page
+     keeps its --radius-pp-* below. */
+  --radius-input: 14px;
+  --radius-chip: 14px;
+  --radius-card: 20px;
+  --radius-ticket: 16px;
+  --radius-sheet: 20px;
+  --radius-button: 12px;
+
+  /* Pro page shapes, Épuré values: [data-style] overrides them and the --pp-* tokens (packages/themes styles.ts). */
+  --radius-pp-button: 9999px;
+  --radius-pp-chip: 9999px;
+  --radius-pp-avatar: 9999px;
+  --radius-pp-card: 32px;
+  --radius-pp-photo: 18px;
+  --radius-pp-photo-desk: 24px;
+
+  --shadow-sheet: 0 -8px 30px rgba(22, 22, 22, 0.12);
+  --shadow-panel: -12px 0 40px rgba(22, 22, 22, 0.12);
+  --shadow-modal: 0 20px 60px rgba(22, 22, 22, 0.18);
+  --shadow-ticket: 0 18px 40px rgba(22, 22, 22, 0.14);
+  --shadow-toast: 0 10px 30px rgba(22, 22, 22, 0.25);
+  /* buttons floating on a photo: the header toolbar, the shop quick add */
+  --shadow-float: 0 2px 10px rgba(22, 22, 22, 0.14);
+  /* A card lifted off the page (landing, pickers): soft and layered, never a hard drop. */
+  --shadow-raise: 0 4px 8px -2px rgba(22, 22, 22, 0.08), 0 12px 24px -6px rgba(22, 22, 22, 0.1);
+
+  --tracking-title: -0.02em;
+  --tracking-display: -0.02em;
+
+  /* Type scale. Sizes without a line-height inherit it, like the text-[13px] they replace. */
+  --text-caption: 13px;
+  --text-ui: 15px;
+  --text-lead: 17px;
+  --text-panel-title: 22px;
+  --text-panel-title--line-height: 1.15;
+  --text-panel-title--letter-spacing: -0.015em;
+  --text-page-title: 24px;
+  --text-page-title--line-height: 1.1;
+  --text-page-title--letter-spacing: -0.02em;
+  --text-title: 30px;
+  --text-title--line-height: 1.08;
+  --text-title--letter-spacing: -0.02em;
+
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* @desk: container variant, for components rendered inside scaled previews. */
+  --container-desk: 860px;
+  --breakpoint-wide: 1360px;
+
+  --animate-fade-in: fade-in 200ms ease-out;
+  --animate-fade-out: fade-out 160ms ease-in;
+  --animate-panel-in: panel-in 260ms var(--ease-emphasized);
+  --animate-panel-out: panel-out 200ms ease-in;
+  --animate-pop-in: pop-in 220ms var(--ease-emphasized);
+  --animate-draw: draw 240ms var(--ease-out-quint) 120ms both;
+  --animate-bell-ring: bell-ring 820ms linear;
+  --animate-caret-blink: caret-blink 1s steps(1) infinite;
+
+  /* Confirmation entrance: the check pops, then the ticket slides up. Use with motion-safe:. */
+  --animate-seal-in: seal-in 520ms cubic-bezier(0.2, 1.4, 0.4, 1) 80ms both;
+  --animate-ticket-in: ticket-in 520ms var(--ease-emphasized) 160ms both;
+
+  @keyframes seal-in {
+    from {
+      transform: scale(0.4);
+    }
+  }
+  @keyframes ticket-in {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes panel-in {
+    from {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes panel-out {
+    to {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1.05;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
+  }
+  /* <BellToggle>: one swing per pass, each smaller and sooner than the last (reactbits' 17°, 5 passes, decay 1). */
+  @keyframes bell-ring {
+    0%,
+    6.8%,
+    17.7%,
+    29.7%,
+    43.3%,
+    59.4% {
+      animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    6.8% {
+      transform: rotate(-17deg);
+    }
+    17.7% {
+      transform: rotate(13.6deg);
+    }
+    29.7% {
+      transform: rotate(-10.2deg);
+    }
+    43.3% {
+      transform: rotate(6.8deg);
+    }
+    59.4% {
+      transform: rotate(-3.4deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+  /* <CodeSlots> caret. */
+  @keyframes caret-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+/* inline: the next/font variable lives on <html>, so resolve it where the class is used. */
+@theme inline {
+  --font-sans: var(--font-hanken), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* The wordmark (<Logo>). */
+  --font-display: var(--font-archivo), sans-serif;
+}
+
+/* A checked radio inside (<Chip>) or aria-pressed (<ToggleChip>). Works with group-selected: too. */
+@custom-variant selected (&:has(:checked), &[aria-pressed="true"]);
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background-color: var(--color-page);
+    color: var(--color-page-fg);
+    font-size: 16px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+  button:not(:disabled, [aria-disabled="true"]),
+  [role="button"]:not([aria-disabled="true"]),
+  label:has(input:not(:disabled)) {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  /* <HoldButton>. --hb-w/--hb-h are measured, --hb-p is the fill progress (0..1), --hb-hold the hold time. */
+  .hb-root {
+    --hb-w: 0px;
+    --hb-h: 0px;
+    --hb-p: 0;
+    --hb-wave: 6px;
+  }
+  .hb-fill {
+    clip-path: inset(0 calc((1 - var(--hb-p)) * (100% + 0.75 * var(--hb-wave)) - var(--hb-p) * 0.25 * var(--hb-wave)) 0 0);
+  }
+  .hb-crest {
+    --hb-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='200' viewBox='0 0 20 200' preserveAspectRatio='none'%3E%3Cpath d='M0 0H10C18 8 18 25.3 10 33.3S2 58.7 10 66.7S18 92 10 100S2 125.3 10 133.3S18 158.7 10 166.7S2 192 10 200H0Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: var(--hb-mask);
+    mask-image: var(--hb-mask);
+    -webkit-mask-repeat: repeat-y;
+    mask-repeat: repeat-y;
+    -webkit-mask-size: var(--hb-wave) calc(var(--hb-h) * 2);
+    mask-size: var(--hb-wave) calc(var(--hb-h) * 2);
+    -webkit-mask-position-x: calc(-1 * var(--hb-wave) + var(--hb-p) * (var(--hb-w) + var(--hb-wave)));
+    mask-position-x: calc(-1 * var(--hb-wave) + var(--hb-p) * (var(--hb-w) + var(--hb-wave)));
+    -webkit-mask-position-y: calc(-1 * var(--hb-p) * var(--hb-h));
+    mask-position-y: calc(-1 * var(--hb-p) * var(--hb-h));
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hb-root {
+      scale: none !important;
+    }
+    /* 200ms = RELEASE_MS in hold-button.tsx. */
+    .hb-fill {
+      clip-path: inset(0) !important;
+      opacity: 0;
+      transition: opacity 200ms ease !important;
+    }
+    /* !important: the span's `grid` utility sits in a later layer and would win otherwise. */
+    .hb-crest {
+      display: none !important;
+    }
+    .hb-root[data-phase="holding"] .hb-fill,
+    .hb-root[data-phase="done"] .hb-fill {
+      opacity: 1;
+      transition: opacity var(--hb-hold) linear !important;
+    }
+    .hb-label > span {
+      filter: none !important;
+    }
+  }
+
+  /* <PeekRating>. --pr-i is the star's index (inline), for the wave delay. */
+  .pr-star {
+    --pr-lit: 0;
+    --pr-up: 0;
+    --pr-mag: 0;
+  }
+  .pr-row:has(:checked) .pr-star {
+    --pr-lit: 1;
+  }
+  .pr-star:has(:checked) ~ .pr-star {
+    --pr-lit: 0;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .pr-row:hover .pr-star {
+      --pr-lit: 1;
+      --pr-up: 1;
+    }
+    .pr-row .pr-star:hover ~ .pr-star {
+      --pr-lit: 0;
+      --pr-up: 0;
+    }
+    .pr-row .pr-star:hover {
+      --pr-mag: 1;
+    }
+  }
+  .pr-glyph {
+    color: color-mix(in srgb, var(--color-ink) calc(var(--pr-lit) * 100%), var(--color-field));
+    fill: currentColor;
+    fill-opacity: var(--pr-lit);
+    transition:
+      color 160ms ease,
+      fill-opacity 160ms ease;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .pr-glyph {
+      transform: translateY(calc(var(--pr-up) * -6px)) scale(calc(1 + var(--pr-mag) * 0.15));
+      transform-origin: 50% 100%;
+      transition:
+        color 160ms ease,
+        fill-opacity 160ms ease,
+        transform 320ms var(--ease-out-quint) calc(var(--pr-i) * 30ms);
+    }
+    .pr-star :checked ~ .pr-glyph {
+      animation: pr-pop 300ms var(--ease-out-quint);
+    }
+  }
+}
+
+@keyframes pr-pop {
+  35% {
+    scale: 1.3;
+  }
+}
+
+/* Title font of a themed page (her name, section headings, the rating): set by [data-font], and its case, weight and
+   tracking by [data-style] when the style has its own (packages/themes). */
+@utility title-type {
+  font-family: var(--title-family, var(--font-hanken), sans-serif);
+  font-weight: var(--pp-title-weight, var(--title-weight, 700));
+  letter-spacing: var(--pp-title-tracking, var(--title-tracking, -0.045em));
+  font-stretch: var(--title-stretch, 100%);
+  text-transform: var(--pp-title-case, none);
+}
+
+@utility pb-safe {
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

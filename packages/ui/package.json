@@ -1,0 +1,43 @@
+{
+  "name": "@kitoko/ui",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles.css",
+    "./format": "./src/format.ts",
+    "./cn": "./src/cn.ts",
+    "./button-styles": "./src/button-styles.ts",
+    "./use-is-desktop": "./src/use-is-desktop.ts",
+    "./pro-page": "./src/pro-page/index.tsx",
+    "./pro-page/styles": "./src/pro-page/styles.ts",
+    "./pro-app": "./src/pro-app/index.tsx",
+    "./*": "./src/*.tsx"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@kitoko/themes": "workspace:*",
+    "clsx": "2.1.1",
+    "lucide-react": "1.59.0",
+    "motion": "12.43.0",
+    "radix-ui": "1.8.1",
+    "tailwind-merge": "3.7.0",
+    "vaul": "1.1.2"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@kitoko/config": "workspace:*",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tailwindcss": "4.3.3"
+  }
+}
