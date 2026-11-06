@@ -318,7 +318,7 @@ export function createKitokoMcpServer(ctxFactory: CtxFactory, options: KitokoMcp
           note:
             pros.length > 0
               ? `price is the standard version (default options), from_price the cheapest options; max_price compares from_price. ${CHOOSE} Then call book_with_deposit with pro_handle, service.service_id and one free_times start. ${NO_REVIEWS}`
-              : "No pro matches. Try without max_price, date or time_of_day, or another city (Kitoko's demo pros are in Milan, Lyon and London).",
+              : "No stylist matches. Try without max_price, date or time_of_day, or another city (Kitoko's demo stylists are in Milan, Lyon and London).",
         };
         return {
           ok: true,
