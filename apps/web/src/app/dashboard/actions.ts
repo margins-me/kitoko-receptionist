@@ -175,7 +175,7 @@ export async function cancelBookingAction(bookingId: string): Promise<ActionResu
   const id = uuid.parse(bookingId);
   if (!(await ownsBooking(id))) return { ok: false, error: "Booking not found" };
   try {
-    const result = await cancelBooking(await actionServicesCtx(), { bookingId: id, by: "pro", reason: "Cancelled by the pro from the calendar" });
+    const result = await cancelBooking(await actionServicesCtx(), { bookingId: id, by: "pro", reason: "Cancelled by the stylist from the calendar" });
     if (!result.ok) return failure(result.error);
     const r = result.value;
     const message =

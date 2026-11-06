@@ -14,8 +14,8 @@ export default async function LoginPage() {
           <a href="/" className="text-caption font-semibold tracking-wide text-muted uppercase no-underline">
             Kitoko · AI front desk
           </a>
-          <h1 className="text-[34px] leading-tight font-bold tracking-hero">Pro dashboard</h1>
-          <p className="text-body">Her live calendar, deposits and assistant. Sign in as one of the demo pros.</p>
+          <h1 className="text-[34px] leading-tight font-bold tracking-hero">Stylist dashboard</h1>
+          <p className="text-body">Her live calendar, deposits and assistant. Sign in as one of the demo stylists.</p>
         </div>
         <LoginForm />
       </div>
