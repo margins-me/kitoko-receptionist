@@ -50,7 +50,8 @@
     "secure": "Paga nella finestra sicura di PayPal.",
     "fallback": "Paghi su PayPal.com",
     "simulator": "Paga (simulatore sandbox)",
-    "simulatorNote": "Modalità test: nessun addebito reale."
+    "simulatorNote": "Modalità test: nessun addebito reale.",
+    "sandboxBuyer": "Demo sandbox: paga con"
   },
   "details": {
     "title": "I suoi dati",

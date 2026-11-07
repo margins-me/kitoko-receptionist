@@ -50,7 +50,8 @@
     "secure": "Vous payez dans la fenêtre sécurisée de PayPal.",
     "fallback": "Payer sur PayPal.com",
     "simulator": "Payer (simulateur sandbox)",
-    "simulatorNote": "Mode test : aucun argent réel n'est débité."
+    "simulatorNote": "Mode test : aucun argent réel n'est débité.",
+    "sandboxBuyer": "Démo sandbox : payez avec"
   },
   "details": {
     "title": "Vos coordonnées",
