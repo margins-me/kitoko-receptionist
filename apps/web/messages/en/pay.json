@@ -50,7 +50,8 @@
     "secure": "You pay in PayPal's secure window.",
     "fallback": "Pay on PayPal.com",
     "simulator": "Pay (sandbox simulator)",
-    "simulatorNote": "Test mode: no real money moves."
+    "simulatorNote": "Test mode: no real money moves.",
+    "sandboxBuyer": "Sandbox demo: pay with"
   },
   "details": {
     "title": "Your details",

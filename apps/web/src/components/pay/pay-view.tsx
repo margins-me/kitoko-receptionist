@@ -328,6 +328,15 @@ export function PayView({
                 {t("payment.fallback")}
               </a>
             )}
+
+            {/* The judges' sandbox buyer (also in the README): no real PayPal account works in the sandbox. */}
+            {paypal.mode === "sandbox" && paypal.clientId && (
+              <p className="flex flex-col items-center gap-0.5 rounded-card border border-dashed border-hairline px-3 py-2 text-caption text-muted">
+                <span>{t("payment.sandboxBuyer")}</span>
+                <span className="font-semibold whitespace-nowrap text-ink select-all">{cur === "GBP" ? "kitoko-buyer-uk@personal.example.com" : "kitoko-buyer-it@personal.example.com"}</span>
+                <span className="font-semibold whitespace-nowrap text-ink select-all">Kitoko-Buyer-2026!</span>
+              </p>
+            )}
           </section>
         )}
 
