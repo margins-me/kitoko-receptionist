@@ -23,7 +23,7 @@ export default async function WhatsAppPage({ params }: PageProps<"/[locale]/[han
   const page = HANDLE.test(handle) ? await getProPage(anonClient(), handle) : null;
   if (!page) notFound();
   return (
-    <main className="min-h-dvh bg-[#D1D7DB]">
+    <main className="min-h-dvh bg-wa-frame">
       <WhatsAppSim handle={handle} locale={locale} proName={page.pro.name} backHref={localePath(`/${handle}`, locale)} />
     </main>
   );

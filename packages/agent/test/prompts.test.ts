@@ -13,7 +13,7 @@ describe("buildClientPrompt", () => {
   const { base, context } = client();
 
   it("speaks for the pro and carries her services", () => {
-    expect(base).toContain("You are the receptionist of Nala Braids, a beauty professional in Paris.");
+    expect(base).toContain("You are the AI front desk of Nala Braids, an independent stylist in Paris.");
     expect(base).toContain("- Knotless braids, 4 h\n- Cornrows, 2 h");
     expect(base).toContain("on WhatsApp");
   });
