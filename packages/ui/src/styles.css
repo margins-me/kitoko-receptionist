@@ -60,6 +60,21 @@
   --color-tone-3: #f2e6dc;
   --color-tone-3-fg: #7a3e22;
 
+  /* The WhatsApp look of the demo chat (/[handle]/whatsapp). Its own colours, not Kitoko's. */
+  --color-wa-frame: #d1d7db;
+  --color-wa-wall: #efeae2;
+  --color-wa-fg: #111b21;
+  --color-wa-bar: #008069;
+  --color-wa-send: #00a884;
+  --color-wa-on-bar: #ffffff;
+  --color-wa-bubble: #ffffff;
+  --color-wa-bubble-mine: #d9fdd3;
+  --color-wa-notice: #fff3c4;
+  --color-wa-notice-fg: #54656f;
+  --color-wa-meta: #667781;
+  --color-wa-tick: #53bdeb;
+  --color-wa-link: #027eb5;
+
   /* Kitoko's own surfaces, rounder since Sable (2026-10-26): cards 20, inner boxes and fields 14. The dashboard makes its
      buttons pills (apps/dashboard globals.css); the booking flow keeps 12 beside the pro page's own shapes. The pro page
      keeps its --radius-pp-* below. */
